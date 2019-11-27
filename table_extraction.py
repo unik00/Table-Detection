@@ -30,7 +30,7 @@ def find_table_features(image):
 	return pos_ims[0] + pos_ims[1]
 
 if __name__ == "__main__":
-	imname = 'test5'
+	imname = 'test'
 	im = cv.imread('test_images/'+imname+'.jpg')
 
 	im_bak = copy.deepcopy(im)
@@ -56,8 +56,8 @@ if __name__ == "__main__":
 	box = np.int0(box)
 
 	im = im_bak
-	cv.drawContours(im, [box], 0, (0,0,255), 6)
+	cv.drawContours(im, [box], 0, (0,0,255), 2)
 	cv.imshow('after', im)
-	cv.imwrite(imname+'_test.jpg', im)
+	cv.imwrite(imname+'_result.jpg', im)
 
 	cv.waitKey()
